@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  description: MyText
+  remind: 2019-03-17 07:50:17
+
+two:
+  name: MyString
+  description: MyText
+  remind: 2019-03-17 07:50:17
