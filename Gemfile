@@ -1,7 +1,11 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
+<<<<<<< HEAD
 ruby '2.6.3'
+=======
+ruby '2.6.2'
+>>>>>>> origin/master
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.2', '>= 5.2.2.1'
@@ -63,4 +67,8 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem 'slim-rails'
 gem 'html2slim'
+<<<<<<< HEAD
 gem 'bootstrap'
+=======
+gem 'bootstrap'
+>>>>>>> origin/master

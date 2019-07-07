@@ -12,6 +12,7 @@ class TasksController < ApplicationController
   end
 
   def create 
+<<<<<<< HEAD
     @task = Task.new(task_params)
 
     if @task.save
@@ -19,6 +20,11 @@ class TasksController < ApplicationController
     else
       render :new
     end
+=======
+    task = Task.new(task_params)
+    task.save!
+    redirect_to tasks_url, notice: "タスク「#{task.name}」を登録しました。"
+>>>>>>> origin/master
   end
 
   def edit
