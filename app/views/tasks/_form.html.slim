@@ -1,11 +1,8 @@
-<<<<<<< HEAD
 - if task.errors.present?
     ul#error_explanation
     - task.errors.full_messages.each do |message|
         li= message
 
-=======
->>>>>>> origin/master
 = form_with model: task, local: true do |f|
     .form-group
         = f.label :name
