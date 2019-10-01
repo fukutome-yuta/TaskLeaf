@@ -9,6 +9,6 @@ class ApplicationController < ActionController::Base
     end
 
     def login_required
-        reirect_to login_path unless current_user
+        redirect_to login_path unless current_user
     end
 end
