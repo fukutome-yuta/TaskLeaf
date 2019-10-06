@@ -1,18 +1,31 @@
 h1 タスク一覧
+
+= search_form_for @q, class: 'mr-5' do |f|
+  .form-group.row
+    = f.label :name_cont, '名称', class: 'col-sm-2 col-form-label'
+    .col-sm-10
+      = f.search_field :name_cont, class: 'form-control'
+  .form-group.row
+    = f.label :remind_gteq, '日時', class: 'col-sm-2 col-form-label'
+    .col-sm-10
+      = f.search_field :remind_gteq, class: 'form-control'
+  .form-group
+    = f.submit class: 'btn btn-outline-primary'
 = link_to '新規登録', new_task_path, class: 'btn btn-primary'
 
 .mb-3
 table.table.table-hover
-    thead.thead-default
-        tr
-            th= Task.human_attribute_name(:name)
-            th= Task.human_attribute_name(:remind)
-            th
-    tbody
-        - @tasks.each do |task|
-            tr
-                td= link_to task.name, task_path(task)
-                td= task.remind
-                td
-                    = link_to '編集', edit_task_path(task), class: 'btn btn-primary mr-3'
-                    = link_to '削除', task, method: :delete, data: { confirm: "タスク「#{task.name}」を削除します。よろしいですか？"}, class: 'btn btn-danger'
+  thead.thead-default
+    tr
+      th= sort_link(@q, :name)
+      th= Task.human_attribute_name(:name)
+      th= Task.human_attribute_name(:remind)
+      th
+  tbody
+    - @tasks.each do |task|
+      tr
+        td= link_to task.name, task_path(task)
+        td= task.remind
+        td
+          = link_to '編集', edit_task_path(task), class: 'btn btn-primary mr-3'
+          = link_to '削除', task, method: :delete, data: { confirm: "タスク「#{task.name}」を削除します。よろしいですか？"}, class: 'btn btn-danger'
