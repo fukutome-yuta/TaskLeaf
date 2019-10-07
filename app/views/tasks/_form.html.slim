@@ -13,4 +13,7 @@
     .form-group
         = f.label :remind
         = f.datetime_select :remind, class: 'form-control', id: 'task_remind'
+    .form-group
+        = f.label :image
+        = f.file_field :image, class: 'form-control'
     = f.submit nil, class: 'btn btn-primary'
